@@ -15,8 +15,11 @@ class PersonSpec extends Specification {
     def cleanup() {
     }
 
-    void "test something"() {
-        expect:"fix me"
-            true == false
+    void "people must have names"() {
+        given:"a person with no name"
+            def p = new Person()
+
+        expect:"instance should not validate"
+          !p.validate()
     }
 }
