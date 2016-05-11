@@ -4,7 +4,10 @@ node {
 
 
   stage "build and test"
-  sh "./gradlew build"
-
+  try {
+      sh "./gradlew build"
+    } catch(e) {
+      println "build failed " + e
+    }
   step([$class:"JUnitResultArchiver",testResults:"**/build/test-results/TEST-*.xml"])
 }
