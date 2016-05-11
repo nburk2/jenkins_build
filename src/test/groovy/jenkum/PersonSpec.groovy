@@ -22,4 +22,9 @@ class PersonSpec extends Specification {
         expect:"instance should not validate"
           !p.validate()
     }
+
+    void "failing test"() {
+      expect:""
+        true == false
+    }
 }
