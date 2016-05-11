@@ -1,7 +1,7 @@
 node {
   stage "source check out"
   checkout scm
-
+  sh "./gradlew clean"
 
   stage "build and test"
   boolean testPassed = true
