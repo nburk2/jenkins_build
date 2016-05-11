@@ -23,8 +23,8 @@ class PersonSpec extends Specification {
           !p.validate()
     }
 
-    void "failing test"() {
-      expect:""
-        true == false
-    }
+    // void "failing test"() {
+    //   expect:""
+    //     true == false
+    // }
 }
