@@ -5,4 +5,6 @@ node {
 
   stage "build and test"
   sh "./gradlew build"
+
+  step([$class:"JUnitResultArchiver",testResults:"**/build/test-results/TEST-*.xml"])
 }
