@@ -14,10 +14,11 @@ node {
 
   step([$class:"JUnitResultArchiver",testResults:"**/build/test-results/TEST-*.xml"])
 
-  stage "archive war"
-  step([$class:"ArtifactArchiver",artifacts:"**/build/libs/*.war",fingerprint:true])
-
   if(!testPassed) {
       throw new Exception("tests failed")
   }
+
+  stage "archive war"
+  step([$class:"ArtifactArchiver",artifacts:"**/build/libs/*.war",fingerprint:true])
+
 }
